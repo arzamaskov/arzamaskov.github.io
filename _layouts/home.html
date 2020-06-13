@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-{%- for post in paginator.post -%}
+{%- for post in paginator.posts -%}
     <article>
         <h1>{{ post.title }}</h1>
         <div>
-            {{ post.exept }}
+            {{ post.excerpt }}
         </div>
     </article>
 {%- endfor -%}
