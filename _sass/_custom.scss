@@ -1,0 +1,267 @@
+/* Custom page CSS
+        -------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.intro {
+    padding: 15px 15px;
+}
+
+@media (min-width: 768px) {
+    .intro {
+        padding: 60px 15px;
+    }
+}
+
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.post-list > article {
+    margin-bottom: 60px;
+}
+
+.post-list > article:not(:first-child) {
+    border-top: 4px double #e8e8e8;
+    padding-top: 60px;
+}
+
+a {
+    color: #0060a0;
+    border-bottom: 1px solid rgba(0, 96, 160, 0.15);
+    transition: 0.33s ease-out;
+
+    &:hover {
+        color: #a03000;
+        border-bottom: 1px solid rgba(160, 48, 0, 0.2);
+        text-decoration: none;
+        transition: none;
+    }
+}
+
+.post-link {
+    color: #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    transition: 0.33s ease-out;
+
+    &:hover {
+        color: #b03000;
+        border-bottom: 1px solid rgba(176, 48, 0, 0.15);
+        transition: none;
+    }
+}
+
+.aside-menu-item a{
+    // font-size: $base-font-size * 0.9;
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+}
+.aside-menu-item p {
+    // font-size: $base-font-size * 0.9;
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+}
+
+.sticky-top {
+    z-index: 900;
+}
+
+/** * Blockquotes */ 
+blockquote {
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    font-size: $base-font-size;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    pre,
+    code {
+        color: $body-color;
+    }
+}
+
+/** * Acts & Lows */
+.act {
+    border: 1px solid #7a7a7a;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.act p {
+    font-size: 1.2rem;
+    line-height: 1.15;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.act p:last-child {
+    margin-bottom: 0;
+}
+
+
+/*======================================
+ Системное оформление - не изменять
+=======================================*/
+
+// body {
+//   padding: 3px;
+// }
+// body > *,
+// body > * > *,
+// body > * > * > *,
+// body > * > * > * > *,
+// body > * > * > * > * > *,
+// body > * > * > * > * > * > *,
+// body > * > * > * > * > * > * > *,
+// body > * > * > * > * > * > * > * > * {
+//   position: relative;
+// }
+// body > *::before,
+// body > * > *::before,
+// body > * > * > *::before,
+// body > * > * > * > *::before,
+// body > * > * > * > * > *::before,
+// body > * > * > * > * > * > *::before,
+// body > * > * > * > * > * > * > *::before,
+// body > * > * > * > * > * > * > * > *::before {
+//   content: "";
+//   position: absolute;
+//   height: 24px;
+//   padding: 2px 5px;
+//   font-weight: bold;
+//   font-size: 16px;
+//   line-height: 24px;
+//   font-family: "Courier New", monotype;
+//   white-space: nowrap;
+// }
+
+// body > * > * > * > *::before {
+//   top: 0px;
+//   left: 0;
+// }
+
+
+// div.test {
+//     min-height: 800px;
+// }
+
+// aside.test {
+//     min-height: 300px;
+// }
+
+// div.test {
+//     box-shadow: inset 0 0 0 3px rgb(255, 45, 82);
+
+//     &::before {
+//         content: "div";
+//         background-color: rgb(255, 45, 82);
+//         color: #fff;
+//         padding: 2px;
+//     }
+// }
+
+// aside.test {
+//     box-shadow: inset 0 0 0 2px rgb(234, 255, 45);
+
+//     &::before {
+//         content: "aside";
+//         background-color: rgb(234, 255, 45);
+//         color: #fff;
+//         padding: 2px;
+//     }
+// }
+
+// .post-list {
+//     min-height: 800px;
+//     box-shadow: inset 0 0 0 2px rgb(234, 255, 45);
+
+//     &::before {
+//         content: ".post-list";
+//         background-color: rgb(234, 255, 45);
+//         color: #fff;
+//         padding: 2px;
+//         top: 0;
+//         right: 0;
+//     }
+// }
+
+// article {
+//     box-shadow: inset 0 0 0 3px rgb(255, 45, 82);
+//     min-height: 800px;
+
+//     &::before {
+//         content: "article";
+//         background-color: rgb(255, 45, 82);
+//         color: #fff;
+//         padding: 2px;
+//     }
+// }
+
+// .post-header {
+//     box-shadow: inset 0 0 0 3px rgb(55, 45, 82);
+//     min-height: 50px;
+
+//     &::before {
+//         content: ".post-header";
+//         background-color: rgb(55, 45, 82);
+//         color: #fff;
+//         padding: 2px;
+//         top: 0;
+//     }
+// }
+
+// .post-content {
+//     box-shadow: inset 0 0 0 3px rgb(55, 145, 82);
+//     min-height: 450px;
+
+//     &::before {
+//         content: ".post-content";
+//         background-color: rgb(55, 145, 82);
+//         color: #fff;
+//         padding: 2px;
+//         top: 0;
+//     }
+// }
+
+// .sticky-top {
+//     box-shadow: inset 0 0 0 3px rgb(255, 45, 82);
+//     min-height: 800px;
+
+//     &::before {
+//         content: ".sticky-top";
+//         background-color: rgb(255, 45, 82);
+//         color: #fff;
+//         padding: 2px;
+//     }
+// }
+
+// .menu {
+//     box-shadow: inset 0 0 0 3px rgb(25, 245, 182);
+//     min-height: 800px;
+
+//     &::before {
+//         content: ".menu";
+//         background-color: rgb(25, 245, 182);
+//         color: #fff;
+//         padding: 2px;
+//     }
+// }
