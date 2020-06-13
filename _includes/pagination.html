@@ -1,0 +1,47 @@
+<nav class="blog-pagination d-flex justify-content-around mb-5">
+  {% if paginator.total_pages != 1 %}
+    {% if paginator.previous_page %}
+      {% if paginator.page == 2 %}
+          <a class="btn btn-outline-secondary" href="{{ "/" | relative_url }}">
+              {{ site.text.pagination.newer | default: "Новее" }}
+          </a>
+      {% else %}
+          <a class="btn btn-outline-dark" href="{{ paginator.previous_page_path | relative_url }}">
+              {{ site.text.pagination.newer | default: "Старее" }}
+          </a>
+      {% endif %}
+    {% else %}
+      <a class="btn btn-outline-dark disabled" href="#" tabindex="-1" aria-disabled="true">
+          {{ site.text.pagination.newer | default: "Новее" }}
+      </a>
+    {% endif %}
+    <div class="btn-toolbar" role="toolbar" aria-label="Paginator toolbar">
+      <div class="btn-group mr-2" role="group" aria-label="Group">
+        {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+            <a href="#" class="btn btn-outline-dark disabled" role="button" aria-disabled="true">
+                {{ page }}
+            </a>
+          {% elsif page == 1 %}
+            <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-dark" role="button">
+                {{ page }}
+            </a>
+          {% else %}
+            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" class="btn btn-dark" role="button">
+                {{ page }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% if paginator.next_page %}
+      <a class="btn btn-outline-dark" href="{{ paginator.next_page_path | relative_url }}">
+          {{ site.text.pagination.older | default: "Старее" }}
+      </a>
+    {% else %}
+      <a class="btn btn-outline-dark disabled" href="#" tabindex="-1" aria-disabled="true">
+          {{ site.text.pagination.older | default: "Старее" }}
+      </a>
+    {% endif %}
+  {% endif %}
+</nav>
