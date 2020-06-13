@@ -2,25 +2,19 @@
 layout: null
 ---
 {% assign page_number = site.posts.size | divided_by: 5.0 | ceil %}
-{% assign filtered_archives = site.archives | sort: "title" %}
 var CACHE_NAME = 'blog-cache-v1';
 var urlsToCache = [
   "{{ '/' | relative_url }}",
-  "{{ './about/' | relative_url }}",
-  "{{ './archives/' | relative_url }}",
   {% for post in site.posts %}
   "{{ post.url | relative_url }}",
   {% endfor %}
   {% for i in (2..page_number) %}
       "./posts/{{ i }}/",
   {% endfor %}
-  {% for archive in filtered_archives %}
-  {% if archive.type == "category" or archive.type == "tag" %}"{{ archive.url | relative_url }}",{% endif %}
-  {% endfor %}
   "{{ './assets/css/main.css' | relative_url }}?{{ site.time | date: '%Y%m%d%H%M' }}",
   "{{ './assets/css/bootstrap.min.css' | relative_url }}",
   "{{ './assets/js/bootstrap.bundle.min.js' | relative_url }}",
-  "{{ './assets/js/jquery-3.4.1.slim.min.js' | relative_url }}",
+  "{{ './assets/js/jquery-3.5.1.slim.min.js' | relative_url }}",
   "{{ './favicon-16x16.png' | relative_url }}"
 ];
 
