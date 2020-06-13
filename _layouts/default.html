@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  </head>
-  <body>
-    {{ content}}
-  </body>
+{%- include head.html -%}
+<body>
+  <!-- Modal for pictures -->
+  <div class="modal fade" id="image-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img class="img-responsive center-block" src="#" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- include header.html -%}
+  {{ content}}
+  {%- include footer.html -%}
+  {%- include scripts.html -%}
+</body>
+
 </html>
