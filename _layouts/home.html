@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{%- for post in paginator.post -%}
+    <article>
+        <h1>{{ post.title }}</h1>
+        <div>
+            {{ post.exept }}
+        </div>
+    </article>
+{%- endfor -%}
+{%- include pagination.html -%}
