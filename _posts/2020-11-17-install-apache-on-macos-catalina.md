@@ -146,7 +146,7 @@ echo "<h1>It works in my Work Folder!</h1>;" > ~/Work/index.html
 sudo apachectl -k restart
 ```
 
-После чего набрать в поисковой строке браузера <a href="http://localhost/>http://localhost</a>, должна появиться наша страничка с приветствием *It works in my Work Folder!*.
+После чего набрать в поисковой строке браузера <a href="http://localhost/" target="_blank">http://localhost</a>, должна появиться наша страничка с приветствием *It works in my Work Folder!*.
 Теперь наш сервер работает на 80 порту.
 
 <!-- more -->
