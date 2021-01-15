@@ -148,7 +148,3 @@ sudo apachectl -k restart
 
 После чего набрать в поисковой строке браузера <a href="http://localhost/" target="_blank">http://localhost</a>, должна появиться наша страничка с приветствием *It works in my Work Folder!*.
 Теперь наш сервер работает на 80 порту.
-
-<!-- more -->
-### Скриншот
-[![mac-apps-screenshot](/assets/images/mac-apps-screenshot.png)](/assets/images/mac-apps-screenshot.png)
