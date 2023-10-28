@@ -5,6 +5,8 @@ title: arzamaskov
 description:
   Блог о веб-разработке
 
+timezone: Europe/Ulyanovsk
+
 excerpt_separator: <!--more-->
 
 paginate: 10
