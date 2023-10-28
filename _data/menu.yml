@@ -7,12 +7,3 @@
       href: https://github.com/arzamaskov/notes.nvim
     - title: Docker Compose
       href: https://github.com/arzamaskov/docker-compose-php
-# - title: Tools
-#   href: /tools/
-#   children:
-#     - title: Asm.js minifier
-#       href: /tools/asm-js-minifier/
-#     - title: Primality test
-#       href: /tools/prime/
-#     - title: Whiteboard
-#       href: /tools/whiteboard/
