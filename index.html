@@ -52,17 +52,6 @@ layout: default
 			<span class="next"></span>
 		{% endif %}
 	</nav>
-
-	{% if paginator.page == 1 %}
-		<template id="loader">
-			{% comment %} <link rel="stylesheet" href="loader.css"> {% endcomment %}
-			<button type="button" id="load">Older posts</button>
-		</template>
-		{% comment %} <script type="module"> {% endcomment %}
-		{% comment %} 	import load from "./load.js"; {% endcomment %}
-		{% comment %} 	load({{ paginator.total_pages }}); {% endcomment %}
-		{% comment %} </script> {% endcomment %}
-	{% endif %}
 {% endif %}
 
 {% comment %}
