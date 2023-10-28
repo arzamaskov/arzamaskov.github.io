@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /style/
+Disallow: /assets/images/
+Disallow: /assets/documents/
+Disallow: /404.html
+Disallow: /LICENSE
+Disallow: /README.md
+Crawl-delay: 10
+Host: arzamaskov.github.io
+Sitemap: https://arzamaskov.github.io/sitemap.xml

@@ -1,0 +1,70 @@
+---
+layout: default
+---
+{% include series.liquid posts=paginator.posts %}
+
+{% unless paginator.posts %}
+	<header><h1 class="title">Ничего нет</h1></header>
+	<p>
+		Кажется мы не можем найти то, что вы ищете.
+		{% comment %} Perhaps searching can help. {% endcomment %}
+	</p>
+{% endunless %}
+
+{% if paginator.total_pages > 1 %}
+	<nav class="pagination">
+		{% if paginator.page > 1 %}
+			<a rel="start" href="{{ site.baseurl }}/">1</a>
+		{% endif %}
+
+		{% if paginator.previous_page > 2 %}
+			<span>…</span>
+		{% endif %}
+
+		{% if paginator.previous_page > 1 %}
+			<a rel="prev" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ paginator.previous_page }}</a>
+		{% endif %}
+
+		<strong>{{ paginator.page }}</strong>
+
+		{% if paginator.next_page %}
+			<a rel="next" href="{{ site.baseurl }}{{ paginator.next_page_path }}">{{ paginator.next_page }}</a>
+
+			{% assign omitted = paginator.next_page | plus: 1 %}
+			{% if omitted < paginator.total_pages %}
+				<span>…</span>
+			{% endif %}
+
+			{% if paginator.next_page < paginator.total_pages %}
+				<a href="{{ site.baseurl }}/page/{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
+			{% endif %}
+		{% endif %}
+
+		{% if paginator.previous_page %}
+			<a class="prev" rel="prev" href="{{ site.baseurl }}{{ paginator.previous_page_path }}"></a>
+		{% else %}
+			<span class="prev"></span>
+		{% endif %}
+
+		{% if paginator.next_page %}
+			<a class="next" rel="next" href="{{ site.baseurl }}{{ paginator.next_page_path }}"></a>
+		{% else %}
+			<span class="next"></span>
+		{% endif %}
+	</nav>
+
+	{% if paginator.page == 1 %}
+		<template id="loader">
+			{% comment %} <link rel="stylesheet" href="loader.css"> {% endcomment %}
+			<button type="button" id="load">Older posts</button>
+		</template>
+		{% comment %} <script type="module"> {% endcomment %}
+		{% comment %} 	import load from "./load.js"; {% endcomment %}
+		{% comment %} 	load({{ paginator.total_pages }}); {% endcomment %}
+		{% comment %} </script> {% endcomment %}
+	{% endif %}
+{% endif %}
+
+{% comment %}
+vim: filetype=liquid
+{% endcomment %}
