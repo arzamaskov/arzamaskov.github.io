@@ -10,7 +10,7 @@ search: exclude
     {% unless page.path contains "style" or page.path contains "assets/css" %}
         <url>
             <loc>{{page.url  | absolute_url |  url_decode }}</loc>
-            <lastmod>{{site.tie | date: '%Y-%m-%d' }}</lastmod>
+            <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -20,7 +20,7 @@ search: exclude
     {% for post in site.posts %}
     <url>
         <loc>{{post.url| absolute_url | url_decode }}</loc>
-        <lastmod>{{site.tme | date: '%Y-%m-%d' }}</lastmod>
+        <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
