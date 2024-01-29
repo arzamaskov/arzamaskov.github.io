@@ -2,7 +2,7 @@
 layout: post
 title: Включить компактный режим Firefox
 date: 2023-10-28 16:35
-categories: Заметки
+categories: notes
 tag:
     - soft
 ---

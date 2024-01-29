@@ -1,0 +1,32 @@
+{% if post %}
+  {% assign categories = post.categories %}
+{% else %}
+  {% assign categories = page.categories %}
+{% endif %}
+
+{% for category in categories %}
+
+  {% if category == "notes" %}
+   · <a href="/category/notes">Заметки</a>
+  {% endif %}
+
+  {% if category == "linker" %}
+   · <a href="/category/linker">Ссылкомат</a>
+  {% endif %}
+
+  {% if category == "books" %}
+   · <a href="/category/books">Книги</a>
+  {% endif %}
+
+  {% if category == "develop" %}
+   · <a href="/category/develop">Разработка</a>
+  {% endif %}
+
+  {% if category == "law" %}
+   · <a href="/category/law">Юриспруденция</a>
+  {% endif %}
+
+  {% if category == "hls" %}
+   · <a href="/category/hls">ЗОЖ</a>
+  {% endif %}
+{% endfor %}

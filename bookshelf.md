@@ -1,45 +1,36 @@
 ---
 layout: page
 title: Книжная полка
+permalink: /bookshelf/
 ---
-
-Книги, которые прочитал недавно
-
-### 2023
-
-1.  Прощайте вещи! Новый японский минимализм. Фумио Сасаки
-2.  Анатомия заблуждений. Большая книга по критическому мышлению. Никита Непряхин
-
 
 <div>
 {% for category in site.categories %}
-    {% if category[0] == "Книги" %}
-        {% for post in category[1] %}
-            {% capture year_of_current_post %}
-                {{ post.date | date: "%Y" }}
-            {% endcapture %}
+    {% if category[0] == "books" %}
+        {% assign postsByYears = category[1] | group_by_exp: "post", "post.date | date: '%Y'" %}
+        {% for year in postsByYears %}
 
-            {% capture year_of_previous_post %}
-                {{ post.previous.date | date: "%Y" }}
-            {% endcapture %}
+        <table class="bookshelf">
+          <thead>
+            <tr>
+              <th colspan="3" class="left">{{ year.name }}</th>
+            </tr>
+          </thead>
+        <tbody>
 
-            {% if forloop.first %}
-                <h3>{{ year_of_current_post }}</h3>
-                <ol>
-            {% endif %}
+        {% for post in year.items %}
 
-                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        <tr>
+          <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+          <td class="center">{{ post.author }}</td>
+          <td class="center">{{ post.rating }}</td>
+        </tr>
 
-            {% if forloop.last %}
-                </ol>
-            {% else %}
-                {% if year_of_current_post != year_of_previous_post %}
-                    </ol>
+        {% endfor %}
 
-                    <h3>{{ year_of_previous_post }}</h3>
-                    <ol>
-                {% endif %}
-            {% endif %}
+          </tbody>
+        </table>
+
         {% endfor %}
     {% endif %}
 {% endfor %}
