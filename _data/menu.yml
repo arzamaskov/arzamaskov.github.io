@@ -1,9 +1,0 @@
-- title: Обо мне
-  href: /about/
-- title: Проекты
-  href: /projects
-  children:
-    - title: Notes.nvim
-      href: https://github.com/arzamaskov/notes.nvim
-    - title: Docker Compose
-      href: https://github.com/arzamaskov/docker-compose-php
