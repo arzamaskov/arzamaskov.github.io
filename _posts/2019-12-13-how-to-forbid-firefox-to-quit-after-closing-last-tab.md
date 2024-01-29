@@ -2,7 +2,7 @@
 layout: post
 title: Отмена закрытия Firefox после закрытия последней вкладки
 date: 2019-12-13 16:45
-categories: Заметки
+categories: notes
 tag:
     - soft
 ---

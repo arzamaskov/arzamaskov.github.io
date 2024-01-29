@@ -2,7 +2,7 @@
 layout: post
 title: Установка Apache на macOS Catalina
 date: 2020-11-17 17:30
-categories: Разработка
+categories: develop
 tags:
     - apache
     - 'web-server'

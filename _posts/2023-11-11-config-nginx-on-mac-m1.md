@@ -2,13 +2,13 @@
 layout: post
 title: Настройка nginx на Mac с M1
 date: 2023-10-28 16:35
-categories: Разработка
+categories: develop
 tag:
     - nginx
     - 'web-server'
 ---
 
-Логическое продолжение поста. Для настройки nginx, его нужно сначала установить:
+Логическое продолжение [поста]({% link _posts/2020-11-17-install-apache-on-macos-catalina.md %}). Для настройки nginx, его нужно сначала установить:
 
 ```shell
 brew install nginx
