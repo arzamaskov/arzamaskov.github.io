@@ -9,7 +9,7 @@ const breadcrumbList = currentUrlPath.split("/").slice(1);
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
 breadcrumbList[0] === "posts" &&
-  breadcrumbList.splice(0, 2, `Posts (page ${breadcrumbList[1] || 1})`);
+  breadcrumbList.splice(0, 2, `Блог (стр. ${breadcrumbList[1] || 1})`);
 
 // if breadcrumb is Home > Tags > [tag] > [page] <etc>
 // replace [tag] > [page] with [tag] (page number)
@@ -19,15 +19,32 @@ breadcrumbList[0] === "tags" &&
     1,
     3,
     `${breadcrumbList[1]} ${
-      Number(breadcrumbList[2]) === 1 ? "" : "(page " + breadcrumbList[2] + ")"
+      Number(breadcrumbList[2]) === 1 ? "" : "(стр. " + breadcrumbList[2] + ")"
     }`
   );
+
+function translateBreadcrumb(breadcrumb) {
+    switch (breadcrumb) {
+        case 'tags':
+            return 'Метки';
+        case 'about':
+            return 'О блоге';
+        case 'search':
+            return 'Поиск';
+        case 'bookshelf':
+            return 'Книжная полка';
+
+        default:
+            return breadcrumb;
+    }
+}
+
 ---
 
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href="/">Home</a>
+      <a href="/">Главная</a>
       <span aria-hidden="true">&raquo;</span>
     </li>
     {
@@ -39,12 +56,12 @@ breadcrumbList[0] === "tags" &&
               aria-current="page"
             >
               {/* make the last part lowercase in Home > Tags > some-tag */}
-              {decodeURIComponent(breadcrumb)}
+              {translateBreadcrumb(decodeURIComponent(breadcrumb))}
             </span>
           </li>
         ) : (
           <li>
-            <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
+            <a href={`/${breadcrumb}/`}>{translateBreadcrumb(breadcrumb)}</a>
             <span aria-hidden="true">&raquo;</span>
           </li>
         )
@@ -64,7 +81,7 @@ breadcrumbList[0] === "tags" &&
     @apply capitalize opacity-70;
   }
   .breadcrumb ul li span {
-    @apply opacity-70;
+    @apply normal-case opacity-70;
   }
   .breadcrumb ul li:not(:last-child) a {
     @apply hover:opacity-100;
