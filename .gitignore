@@ -1,3 +1,4 @@
+# Jekyll-specific files
 *.gem
 .bundle
 .jekyll-cache
@@ -5,3 +6,12 @@
 _site
 vendor
 Gemfile.lock
+
+# macOS-specific files
+.DS_Store
+
+# dependencies
+node_modules/
+
+# ignore .astro directory
+.astro
