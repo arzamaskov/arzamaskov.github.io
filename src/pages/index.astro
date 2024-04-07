@@ -9,6 +9,7 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
+import { SITE } from "@config";
 
 const posts = await getCollection("blog");
 
@@ -23,7 +24,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>Mingalaba</h1>
+      <!-- <h1>{SITE.title}</h1> -->
+      <p class="h1">Привет!</p>
       <a
         target="_blank"
         href="/rss.xml"
@@ -46,6 +48,32 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         blog theme. This theme follows best practices and provides accessibility
         out of the box. Light and dark mode are supported by default. Moreover,
         additional color schemes can also be configured.
+      </p>
+      <p>
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/bookshelf/"
+        >
+          Книжная полка
+        </a>
+        </LinkButton>
+        <span class="separator">&nbsp;|&nbsp;</span>
+      </p>
+      <p>
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/posts/"
+        >
+          Блог
+        </LinkButton>
+      </p>
+      <p>
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/tags/"
+        >
+          Метки
+        </LinkButton>
       </p>
       <p>
         Read the blog posts or check
@@ -73,7 +101,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
-            <h2>Лучшее из блога</h2>
+            <h2>Избранное</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
                 <Card
@@ -129,8 +157,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   #hero {
     @apply pb-6 pt-8;
   }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  #hero .h1 {
+    @apply my-4 inline-block text-3xl font-bold sm:my-8;
   }
   #hero .rss-link {
     @apply mb-6;
