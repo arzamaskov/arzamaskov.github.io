@@ -1,10 +1,13 @@
 ---
 title: Анатомия заблуждений. Большая книга по критическому мышлению
-pubDatetime: 2023-03-08
+pubDatetime: 2023-03-08T09:00:00+04:00
 description: Анатомия заблуждений. Большая книга по критическому мышлению
-categories: books
 rating: ★★★★★
-author: Никита Непряхин
+slug: anatomy-of-delusions
+featured: false
+draft: false
+tags:
+  - books
 ---
 
 Никита Непряхин

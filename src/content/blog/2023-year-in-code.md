@@ -1,33 +1,38 @@
 ---
 title: 2023 год в коде
-pubDatetime: 2024-01-07
+pubDatetime: 2024-01-07T09:00:00+04:00
 description: Немного статистики по нажатию клавиш за 2023 год.
-categories: notes
+slug: year-in-code
+featured: false
+draft: false
+tags:
+    - statistic
+    - notes
 ---
 
 Немного статистики по нажатию клавиш за 2023 год.
 
-![all year statistics]({{ base_url }}/images/2023-all-statistic.png)
+![all year statistics](@assets/images/2023-all-statistic.png)
 
 Тут видно, что самый продуктивный день - четверг - чистых 4 часа времени.
 
-![year statistic]({{ base_url }}/images/2023-coding.png)
+![year statistic](@assets/images/2023-coding.png)
 
 Если внимательно посмотреть, то можно увидеть отпуска.
 
-![year statistic in days]({{ base_url }}/images/2023-coding-days.png)
+![year statistic in days](@assets/images/2023-coding-days.png)
 
 Топ языков программирования: PHP, sh, Smarty (хотя это не язык, к слову).
 
-![programming languages]({{ base_url }}/images/2023-stat-langs.png)
+![programming languages](@assets/images/2023-stat-langs.png)
 
 Основная ОС.
 
-![os statistic]({{ base_url }}/images/2023-stat-os.png)
+![os statistic](@assets/images/2023-stat-os.png)
 
 Любимая IDE.
 
-![ide statistic]({{ base_url }}/images/2023-stat-ide.png)
+![ide statistic](@assets/images/2023-stat-ide.png)
 
 В среднем, за весь год я нажимал на клавиши 3 часа и 31 минуту в день.
 

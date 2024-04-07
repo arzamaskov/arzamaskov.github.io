@@ -1,11 +1,13 @@
 ---
 title: PHP. Правильный путь
-pubDatetime: 2023-09-18
+pubDatetime: 2023-09-18T09:00:00+04:00
 description: PHP. Правильный путь. Необходимый минимум для разработчика.
+rating: ★★★★★
+slug: php-the-right-way
+featured: false
+draft: false
 tags:
     - books
-rating: ★★★★★
-author: Павел Савинов
 ---
 
 Павел Савинов

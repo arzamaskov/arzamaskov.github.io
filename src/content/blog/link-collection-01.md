@@ -1,7 +1,13 @@
 ---
+author: Андрей Арзамасков
 title: Онлайн-курсы для QA
-pubDatetime: 2020-02-09T20:20:00Z
-description: linker
+pubDatetime: 2020-02-09T09:20:00+04:00
+description: 'Коллекция ссылок #1'
+slug: link-collection-01
+featured: false
+draft: false
+tags:
+    - links
 ---
 
 - [Основы тестирования программного обеспечения](https://universarium.org/course/1005) - онлайн курс от MAIL.RU

@@ -1,28 +1,32 @@
 ---
 title: Установка Apache на macOS Catalina
-date: 2020-11-17 17:30
-pubDatetime: 2020-11-17T17:30:00Z
+pubDatetime: 2020-11-17T17:30:00+04:00
 description: Установка Apache на macOS Catalina
-categories: develop
+slug: install-apache-on-macos-catalina
+featured: false
+draft: false
 tags:
     - apache
-    - 'web-server'
 ---
 
 Операционная система macOS уже содержит встроенный сервер Apache, но не самую последнюю его версию, поэтому лучше установить свежую версию из Homebrew.
-<!--more-->
 
 ## Установка Xcode Command Line Tools
+
 Если установка производится на чистую ОС, то в первую очередь надо установить Xcode Command Line Tools для работы с командной строкой:
+
 ```sh
 xcode-select --install
 ```
 
 ## Установка Homebrew
+
 Следующим шагом устанавливаем Homebrew, для чего вводим команду с [сайта](https://brew.sh/).
 
 ## Создаем директории для логов Apache
+
 Apache сконфигурирован для записи логов, но лучше будет создать собственные директории, чтобы проще было их найти, и сразу дадим им нужные права.
+
 ```sh
 sudo mkdir /usr/local/log
 
@@ -34,9 +38,11 @@ sudo chmod -R ug+w /usr/local/log/httpd/
 ```
 
 ## Установка и настройка Apache
+
 Нужно отключить предустановленный Apache, установить Apache из Homebrew и настроить его на 80-й порт.
 
 Если предуставновленный Apache запущен, его нужно остановить и удалить из автозагрузки:
+
 ```sh
 sudo apachectl stop
 
@@ -44,11 +50,13 @@ sudo launchctl unload-w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/
 ```
 
 Устанавливаем последнюю версию Apache из Homebrew:
+
 ```sh
 brew install apache
 ```
 
 Запускаем Apache и добавляем его в автозагрузку:
+
 ```sh
 brew services start httpd
 ```
@@ -56,17 +64,20 @@ brew services start httpd
 Для проверки работы веб-сервера можно пройти по адресу [http://localhost:8080](http://localhost:8080), должна отобразиться страничка с текстом *It works*.
 
 Теперь нужно сконфигурировать Apache через файл:
+
 ```sh
 vim /usr/local/etc/httpd/httpd.conf
 ```
 
 ### Изменение порта сервера
+
 В конфигурационном файле найти строку `Listen 8080` и меняем ее на `Listen 80`.
 
 ### Подключение необходимых модулей
+
 Следующее, что нужно сделать, это подключить дополнительные модули. Делается это раскомментированием (удалением символа `#` в начале строки) соответствующих строчек в файле.
 
-```sh
+```
 LoadModule deflate_module lib/httpd/modules/mod_deflate.so
 
 LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
@@ -77,56 +88,60 @@ LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
 
 Для этого в файле `httpd.conf` найти строчки, отвечающие за пользователя и группу и заменить их на собственные.
 
-```sh
+```
 User your_username
 
 Group staff
 ```
 
 ### Настройка администратора и имени веб-сервера
+
 Для этого нужно найти строчку `ServerAdmin` (при необходимости раскомментировать) и добавить собственную почту.
 
-```sh
+```
 ServerAdmin yourname@email.com
 ```
 
 Настраиваем имя сервера, для этого раскомментируем соответствующую строчку в конфигурационном файле и изменим значение на `localhost`.
 
-```sh
+```
 ServerName localhost
 ```
 
 ### Настройка корневой директории веб-сервера
+
 Следующее, что нужно сделать - изменить корневую директорию. Это директория, в которой будет Apache будет искать файлы, по умолчанию назначена на `/usr/local/var/www/`. Для удобства пользования, изменим ее на папку в домашней директории.
 
 Для этого надо найти строку `DocumentRoot` и изменить ее значения на подходящее.
 
-```sh
+```
 DocumentRoot "/Users/your_username/Work"
 ```
 
 Затем нужно изменить ссылку на директорию в тэге ниже.
 
-```sh
+```
 <Directory "/Users/your_username/Work">;
 ```
 
 В этом же блоке нужно найти `AllowOverride` и изменить его значение с `None` на `All`.
 
-```sh
+```
 AllowOverride All
 ```
 
 ### Настройка расположения лога ошибок
+
 Затем нужно настроить логирование ошибок сервером во вновь созданные директории. Для этого надо найти строку, содержащую `ErrorLog` и заменить ее значение на нужное.
 
-```sh
+```
 ErrorLog "/usr/local/log/httpd/error_log"
 ```
 
 После чего, сохраняем файл.
 
 ### Создание рабочей директории
+
 Для проверки работы сервера создадим рабочую директорию `Work` и простой html-файл `index.html`.
 
 ```sh
@@ -136,6 +151,7 @@ echo "<h1>It works in my Work Folder!</h1>;" > ~/Work/index.html
 ```
 
 ### Перезапуск Apache
+
 Для применения всех внесенных нами изменений, нужно перезапустить сервер.
 
 ```sh

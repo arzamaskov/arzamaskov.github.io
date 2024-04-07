@@ -1,11 +1,13 @@
 ---
 title: Задача трех тел
-pubDatetime: 2024-01-24
+pubDatetime: 2024-01-24T09:00:00+04:00
 description: Лю Цысинь. Задача трех тел. Первая часть трилогии "Память о прошлом Земли"
-tags:
-    - books
 rating: ★★★★☆
-author: Лю Цысинь
+slug: three-body-problem
+featured: false
+draft: false
+tags:
+  - books
 ---
 
 Лю Цысинь

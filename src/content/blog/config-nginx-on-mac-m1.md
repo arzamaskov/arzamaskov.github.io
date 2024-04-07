@@ -1,30 +1,30 @@
 ---
 title: Настройка nginx на Mac с M1
-pubDatetime: 2023-10-28T16:35:00Z
+pubDatetime: 2023-10-28T16:35:00+04:00
 description: Настройка nginx на Mac с M1
-categories: develop
-tag:
+slug: config-nginx-on-mac-m1
+featured: true
+draft: false
+tags:
     - nginx
-    - 'web-server'
 ---
 
-Логическое продолжение [поста]({% link _posts/2020-11-17-install-apache-on-macos-catalina.md %}). Для настройки nginx, его нужно сначала установить:
+Логическое продолжение [поста](../install-apache-on-macos-catalina). Для настройки nginx, его нужно сначала установить:
 
-```shell
+```sh
 brew install nginx
 ```
 После чего, запускаем его от `sudo`, так как слушать он будет 80 порт.
-<!--more-->
 
 Я обычно предпочитаю запускать его **не** через `brew services` а вручную:
 
-```
+```sh
 sudo nginx
 ```
 
 Далее нужно сконфигурировать файл `nginx.conf`:
 
-```shell
+```sh
 vim /opt/homebrew/etc/nginx/nginx.conf
 ```
 
@@ -115,11 +115,11 @@ server {
 }
 ```
 
-Где плейсхолдеры {% raw %}`{{host}}`{% endraw %} и {% raw %}`{{root}}`{% endraw %} заменяются соответственно на имя виртульного хоста и путь к директории, например `test.local` и `/Users/user/sites/my-awesome-site/public`.
+Где плейсхолдеры `{{host}}` и `{{root}}` заменяются соответственно на имя виртульного хоста и путь к директории, например `test.local` и `/Users/user/sites/my-awesome-site/public`.
 
 После всех изменений нужно перезагрузить конфиги nginx:
 
-```
+```sh
 sudo nginx -s reload
 ```
 

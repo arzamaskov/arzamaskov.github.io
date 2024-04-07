@@ -1,10 +1,12 @@
 ---
 title: Включить компактный режим Firefox
-pubDatetime: 2023-10-28T16:35:00Z
+pubDatetime: 2023-10-28T16:35:00+04:00
 description: Включить компактный режим Firefox
-categories: notes
-tag:
-    - soft
+slug: enable-firefox-compact-mode
+featured: true
+draft: false
+tags:
+    - firefox
 ---
 
 По каким-то причинам, компактный режим в Firefox по дефолту отключен в новых версиях. Чтобы включить:

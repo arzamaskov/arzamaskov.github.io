@@ -1,10 +1,13 @@
 ---
 title: Прощайте вещи! Новый японский минимализм
-pubDatetime: 2023-02-23T15:22:00Z
+pubDatetime: 2023-02-23T15:22:00+04:00
 description: Минимализм, который изменил жизнь
-categories: books
+slug: goodbye-things
+featured: false
+draft: false
 rating: ★★★★☆
-author: Фумио Сасаки
+tags:
+  - books
 ---
 
 Фумио Сасаки

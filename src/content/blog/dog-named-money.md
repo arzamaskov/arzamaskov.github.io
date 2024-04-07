@@ -1,11 +1,13 @@
 ---
 title: Пёс по имени Мани
-pubDatetime: 2023-08-02
+pubDatetime: 2023-08-02T09:00:00+04:00
 description: Бодо Шефер. Пёс по имени Мани.
+rating: ★★★★★
+slug: dog-named-money
+featured: false
+draft: false
 tags:
     - books
-rating: ★★★★★
-author: Бодо Шефер
 ---
 
 Бодо Шефер
