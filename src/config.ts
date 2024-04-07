@@ -4,10 +4,10 @@ export const SITE: Site = {
   website: "https://arzamaskov.github.io/", // replace this with your deployed domain
   author: "Андрей Арзамасков",
   desc: "Личный блог",
-  title: "computational reality",
+  title: "arzamaskov",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 10,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
@@ -18,9 +18,9 @@ export const LOCALE = {
 
 export const LOGO_IMAGE = {
   enable: false,
-  svg: true,
-  width: 216,
-  height: 46,
+  svg: false,
+  width: 46,
+  height: 92,
 };
 
 export const SOCIALS: SocialObjects = [
