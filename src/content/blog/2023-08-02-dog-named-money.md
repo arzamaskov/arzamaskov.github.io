@@ -2,7 +2,8 @@
 title: Пёс по имени Мани
 pubDatetime: 2023-08-02
 description: Бодо Шефер. Пёс по имени Мани.
-categories: books
+tags:
+    - books
 rating: ★★★★★
 author: Бодо Шефер
 ---
