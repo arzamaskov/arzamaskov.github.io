@@ -1,12 +1,12 @@
 ---
 title: Настройка nginx на Mac с M1
-pubDatetime: 2023-10-28T16:35:00Z
+pubDatetime: 2023-10-28T16:35:00+04:00
 description: Настройка nginx на Mac с M1
 slug: config-nginx-on-mac-m1
 featured: true
 draft: false
 tags:
-  - nginx
+    - nginx
 ---
 
 Логическое продолжение [поста](../install-apache-on-macos-catalina). Для настройки nginx, его нужно сначала установить:
@@ -14,7 +14,6 @@ tags:
 ```sh
 brew install nginx
 ```
-
 После чего, запускаем его от `sudo`, так как слушать он будет 80 порт.
 
 Я обычно предпочитаю запускать его **не** через `brew services` а вручную:
