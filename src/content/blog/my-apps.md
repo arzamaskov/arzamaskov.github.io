@@ -1,14 +1,14 @@
 ---
 author: Андрей Арзамасков
 title: Приложения на моем Mac
-pubDatetime: 2020-02-02T20:20:00+04:00
-modDatetime: 2020-05-22T09:12:47.400+04:00
+pubDatetime: 2020-02-02T20:20:00Z
+modDatetime: 2020-05-22T09:12:47.400Z
 description: Приложения на моем Mac на февраль 2020 года.
 slug: my-apps
 featured: false
 draft: false
 tags:
-    - notes
+  - notes
 ---
 
 Приложения на моем Mac на февраль 2020 года.
@@ -30,6 +30,7 @@ brew cask install iterm2
 ```sh
 brew cask install visual-studio-code
 ```
+
 **Sequel Pro**&nbsp;&mdash; простое и&nbsp;легковесное приложение для работы&nbsp;с базами данных MySQL, использую вместо phpMyAdmin
 
 ```sh
@@ -96,7 +97,7 @@ brew cask install firefox
 brew cask install sublime-text
 ```
 
-*Update 10.02.2020*
+_Update 10.02.2020_
 
 **Slack**&nbsp;&mdash; корпоративный мессенджер
 
@@ -110,7 +111,7 @@ brew cask install slack
 brew cask install google-chrome
 ```
 
-*Update May 2020*
+_Update May 2020_
 
 **LibreOffice**&nbsp;&mdash; офисный пакет. Долгое время обходился Google Docs, но&nbsp;нужен и&nbsp;оффлайновый пакет
 

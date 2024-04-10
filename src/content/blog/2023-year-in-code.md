@@ -1,13 +1,13 @@
 ---
 title: 2023 год в коде
-pubDatetime: 2024-01-07T09:00:00+04:00
+pubDatetime: 2024-01-07T09:00:00Z
 description: Немного статистики по нажатию клавиш за 2023 год.
 slug: year-in-code
 featured: false
 draft: false
 tags:
-    - statistic
-    - notes
+  - statistic
+  - notes
 ---
 
 Немного статистики по нажатию клавиш за 2023 год.
