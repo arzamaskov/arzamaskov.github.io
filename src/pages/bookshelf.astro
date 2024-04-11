@@ -3,19 +3,13 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import BookCard from "@components/BookCard";
-import Socials from "@components/Socials.astro";
 import getBooksPostsByYear from "@utils/getBooksPostsByYear";
-import { SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
 
 const sortedPosts = getBooksPostsByYear(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.books);
-
-const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
@@ -24,49 +18,47 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     <section id="hero">
       <h1>Книжная полка</h1>
 
-      <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
-      </p>
+      <p>Книги, которые прочитал когда-то.</p>
     </section>
 
     <Hr />
 
     {
-    sortedPosts.length > 0 && (
-      <>
-        <section id="featured">
-          {Object.entries(sortedPosts.reduce((acc, post) => {
-            const year = new Date(post.data.pubDatetime ?? post.data.modDatetime).getFullYear();
-            if (!acc[year]) {
-              acc[year] = [];
-            }
-            acc[year].push(post);
-            return acc;
-          }, {}))
-            .sort(([year1], [year2]) => year2 - year1) // Сортируем года по убыванию
-            .map(([year, postsByYear]) => (
-              <div key={year}>
-                <h2>{year}</h2>
-                <ul>
-                  {postsByYear.map(({ data, slug }) => (
-                    <BookCard
-                      key={slug}
-                      href={`/posts/${slug}/`}
-                      frontmatter={data}
-                      secHeading={false}
-                    />
-                  ))}
-                </ul>
-              </div>
-            ))}
-        </section>
-      </>
+      sortedPosts.length > 0 && (
+        <>
+          <section id="featured">
+            {Object.entries(
+              sortedPosts.reduce((acc, post) => {
+                const year = new Date(
+                  post.data.pubDatetime ?? post.data.modDatetime
+                ).getFullYear();
+                if (!acc[year]) {
+                  acc[year] = [];
+                }
+                acc[year].push(post);
+                return acc;
+              }, {})
+            )
+              .sort(([year1], [year2]) => year2 - year1) // Сортируем года по убыванию
+              .map(([year, postsByYear]) => (
+                <div key={year}>
+                  <h2>{year}</h2>
+                  <ul>
+                    {postsByYear.map(({ data, slug }) => (
+                      <BookCard
+                        key={slug}
+                        href={`/posts/${slug}/`}
+                        frontmatter={data}
+                        secHeading={false}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </section>
+        </>
       )
     }
-
   </main>
 
   <Footer />
@@ -82,9 +74,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   }
   #hero .rss-link {
     @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
   }
   #hero p {
     @apply my-2;

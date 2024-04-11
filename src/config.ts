@@ -144,4 +144,10 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `${SITE.author} в Mastodon`,
     active: true,
   },
+  {
+    name: "rss",
+    href: "/rss.xml",
+    linkTitle: "RSS feed",
+    active: true,
+  },
 ];
