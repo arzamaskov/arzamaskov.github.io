@@ -25,33 +25,46 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <main id="main-content">
     <section id="hero">
       <p>
-        Привет! Я Андрей, работаю программистом, преимущественно PHP.
-        Пишу здесь о разработке, здоровом образе жизни, о книгах - моя
+        Привет! Я Андрей, пишу здесь о
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/tags/develop/"
+        >
+          программировании
+        </LinkButton>,
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/tags/develop/"
+        >
+          здоровом образе жизни
+        </LinkButton>,
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="/bookshelf/"
         >
-          книжная полка
-        </LinkButton>, да и в целом, обо всем, что не оставляет равнодушным.
-        Иногда делаю здесь шпаргалки по всяким прикольным штукам, типа
+          прочитанных книгах
+        </LinkButton> и остальных интересуюущих меня вещах.
+      </p>
+      <p>
+        Иногда делаю шпаргалки по пользованию различными инструментами:
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="/tags/git/"
         >
-            git
+          vim
         </LinkButton>,
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="/tags/nginx/"
         >
-            nginx
-        </LinkButton>,
+          git
+        </LinkButton> или
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
           href="/tags/pass/"
         >
-            pass
-        </LinkButton>, и тому подобных.
+          pass
+        </LinkButton>, и другими.
       </p>
       {
         // only display if at least one social link is enabled
@@ -119,42 +132,42 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   </main>
 
   <Footer />
+
+  <style>
+    /* ===== Hero Section ===== */
+    #hero {
+      @apply pb-6 pt-8;
+    }
+    #hero .h1 {
+      @apply my-4 inline-block text-3xl font-bold sm:my-8;
+    }
+    #hero h3 {
+      @apply my-4 font-bold sm:my-4;
+    }
+    #hero p {
+      @apply my-2;
+    }
+    #hero span {
+      @apply text-sm;
+    }
+    .social-wrapper {
+      @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+    }
+    .social-links {
+      @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    }
+
+    /* ===== Featured & Recent Posts Sections ===== */
+    #featured,
+    #recent-posts {
+      @apply pb-6 pt-12;
+    }
+    #featured h2,
+    #recent-posts h2 {
+      @apply text-2xl font-semibold tracking-wide;
+    }
+    .all-posts-btn-wrapper {
+      @apply my-8 text-center;
+    }
+  </style>
 </Layout>
-
-<style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pb-6 pt-8;
-  }
-  #hero .h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8;
-  }
-  #hero h3 {
-    @apply my-4 font-bold sm:my-4;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  #hero span {
-    @apply text-sm;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-  }
-
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply pb-6 pt-12;
-  }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-</style>
